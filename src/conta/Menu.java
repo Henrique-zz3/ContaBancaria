@@ -42,7 +42,8 @@ System.out.println();
 			System.out.println("            6 - Sacar                                ");
 			System.out.println("            7 - Depositar                            ");
 			System.out.println("            8 - Transferir valores entre Contas      ");
-			System.out.println("            9 - Sair                                 ");
+			System.out.println("            9 - Visualizar dados                     ");
+			System.out.println("            10 - Sair                                ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
@@ -85,6 +86,14 @@ System.out.println();
 				break;
 				
 			case 9:
+				
+				System.out.println(Cores.TEXT_WHITE + "\nBanco do Brazil com Z - Seus dados: ");
+				c1.visualizar();
+				
+				break;
+				
+				
+			case 10:
 				
 				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 				leia.close();
