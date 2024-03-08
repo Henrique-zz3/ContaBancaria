@@ -2,25 +2,30 @@ package conta;
 
 import conta.util.Cores;
 import java.util.Scanner;
-import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
+
 
 public class Menu {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		Conta c1 = new Conta(123456, 123, 1, "Maria dos Santos", 2500.0f);
+		// Teste da Classe Conta Corrente
+		ContaCorrente cc1 = new ContaCorrente(1, 123, 1, "José da Silva", 0.0f, 10000.0f);
+		cc1.visualizar();
+		cc1.sacar(1200.0f);
+		cc1.visualizar();
+		cc1.depositar(5000.0f);
+		cc1.visualizar();
+				
+	    // Teste da Classe Conta Poupança
+		ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Maria dos Santos", 100000.0f, 15);
+		cp1.visualizar();
+		cp1.sacar(1000.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
 		
-		
-		System.out.println("Nome do titular: " + c1.getTitular());
-		System.out.println("Nome do titular: " + c1.getSaldo());
-		
-System.out.println();
-		
-		c1.setSaldo(10000.0f);
-		System.out.println("Saldo da Conta: " + c1.getSaldo());
-		
-
 		Scanner leia = new Scanner(System.in);
 		
 		int opcao;
@@ -42,8 +47,7 @@ System.out.println();
 			System.out.println("            6 - Sacar                                ");
 			System.out.println("            7 - Depositar                            ");
 			System.out.println("            8 - Transferir valores entre Contas      ");
-			System.out.println("            9 - Visualizar dados                     ");
-			System.out.println("            10 - Sair                                ");
+			System.out.println("            9 - Sair                                 ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
@@ -82,25 +86,15 @@ System.out.println();
 				break;
 			case 8:
 				System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
-
-				break;
 				
+				break;	
 			case 9:
 				
-				System.out.println(Cores.TEXT_WHITE + "\nBanco do Brazil com Z - Seus dados: ");
-				c1.visualizar();
-				
-				break;
-				
-				
-			case 10:
-				
-				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+				System.out.println(Cores.TEXT_WHITE + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 				leia.close();
 				System.exit(0);
 				
 				break;
-				
 			default:
 				System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
 				break;
@@ -108,6 +102,13 @@ System.out.println();
 		}
 	}
 	
+	public static void sobre() {
+		System.out.println("\n*********************************************************");
+		System.out.println("Projeto Desenvolvido por: Henrique_zz3");
+		System.out.println("Generation Brasil - generation@generation.org");
+		System.out.println("github.com/conteudoGeneration");
+		System.out.println("*********************************************************");
+	}
 	
 }
 

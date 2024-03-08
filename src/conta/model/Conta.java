@@ -1,6 +1,6 @@
 package conta.model;
 
-public class Conta {
+public abstract class Conta {
 
 	// Atributo / Caracteristicas
 	
@@ -69,6 +69,24 @@ public class Conta {
 	}
 	
 	//Métodos / Ações
+	
+	public boolean sacar(float valor) { 
+		
+		if(this.getSaldo() < valor) {
+			System.out.println("\n Saldo Insuficiente!");
+			return false;
+		}else {
+			this.setSaldo(this.getSaldo() - valor);
+			return true;
+		}
+			
+	}
+
+	public void depositar(float valor) {
+
+		this.setSaldo(this.getSaldo() + valor);
+
+	}
 	
 	public void visualizar() {
 		
